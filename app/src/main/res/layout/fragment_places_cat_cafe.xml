@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LocationFragment">
+    tools:context=".placesCatCafe">
 
     <ImageView
         android:id="@+id/fragmentImage"
         android:layout_width="match_parent"
         android:layout_height="300dp"
         android:layout_margin="15dp"
-        app:srcCompat="@drawable/miami" />
+        app:srcCompat="@drawable/cat_cafe" />
 
     <TextView
         android:id="@+id/TitleTextView"
@@ -19,7 +19,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="15dp"
         android:layout_marginTop="330dp"
-        android:text="Miami"
+        android:text="Cat Cafe"
         android:textAlignment="center"
         android:textSize="20dp"
         android:textStyle="bold" />
@@ -30,7 +30,12 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="15dp"
         android:layout_marginTop="360dp"
-        android:text="You will run out of money in about 9 seconds here, EXPENSIVE."
+        android:text="MEOW MEOW MEOW MEOW MEOW MEOW MEOW MEOW MEOW MEOW MEOW purr"
         android:textAlignment="center" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="10000dp" />
 
 </FrameLayout>

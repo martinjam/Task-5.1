@@ -7,9 +7,9 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.media.Image;
+import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Toast;
+import android.view.View;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -75,13 +75,13 @@ public class MainActivity extends AppCompatActivity implements DestinationAdapte
                 fragment = new destAntarticaFragment();
                 break;
             case 1:
-                Toast.makeText(this, "You clicked on South Bank ", Toast.LENGTH_SHORT).show();
+                fragment = new destAustraliaFragment();
                 break;
             case 2:
-                Toast.makeText(this, "You clicked on So2k ", Toast.LENGTH_SHORT).show();
+                fragment = new destEgyptFragment();
                 break;
             case 3:
-                Toast.makeText(this, "You clicked on So2k ", Toast.LENGTH_SHORT).show();
+                fragment = new destMiamiFragment();
                 break;
             default:
                 throw new IllegalStateException("Unexpected value: " + position);
@@ -93,24 +93,33 @@ public class MainActivity extends AppCompatActivity implements DestinationAdapte
 
     @Override
     public void onItemClick2(int position) {
+        Fragment fragment;
         switch (position) {
             case 0:
-                Toast.makeText(this, "You clicked on Station St.", Toast.LENGTH_SHORT).show();
+                fragment = new placesCafe();
                 break;
             case 1:
-                Toast.makeText(this, "You clicked on South Bank ", Toast.LENGTH_SHORT).show();
+                fragment = new placesCasino();
                 break;
             case 3:
-                Toast.makeText(this, "You clicked on 3", Toast.LENGTH_SHORT).show();
+                fragment = new placesCatCafe();
                 break;
             case 4:
-                Toast.makeText(this, "You clicked on4 ", Toast.LENGTH_SHORT).show();
+                fragment = new placesCove();
                 break;
             case 5:
-                Toast.makeText(this, "You clicked on4 ", Toast.LENGTH_SHORT).show();
+                fragment = new placesNightClub();
                 break;
             default:
                 throw new IllegalStateException("Unexpected value: " + position);
         }
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.fragment, fragment ).commit();
+    }
+
+    public void back(View view) {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 }
